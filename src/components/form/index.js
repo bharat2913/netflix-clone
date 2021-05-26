@@ -9,6 +9,7 @@ import {
   Link,
   Input,
   Submit,
+  Button,
 } from './styles/form';
 
 export default function Form({ children, ...restProps }) {
@@ -45,4 +46,8 @@ Form.Input = function FormInput({ children, ...restProps }) {
 
 Form.Submit = function FormSubmit({ children, ...restProps }) {
   return <Submit {...restProps}>{children}</Submit>;
+};
+
+Form.Button = function FormButton({ children, ...restProps }) {
+  return <Button {...restProps}>{children}</Button>;
 };

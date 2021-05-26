@@ -90,3 +90,11 @@ export const Submit = styled.button`
     opacity: 0.5;
   }
 `;
+
+export const Button = styled.button`
+  background: transparent;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  font-size: 16px;
+`;

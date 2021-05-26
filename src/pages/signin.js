@@ -30,6 +30,20 @@ export default function Signin() {
       });
   };
 
+  const handleGuestLogin = (event) => {
+    event.preventDefault();
+
+    firebase
+      .auth()
+      .signInWithEmailAndPassword('test@gmail.com', 'test123')
+      .then(() => {
+        history.push(ROUTES.BROWSE);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
   return (
     <>
       <HeaderContainer>
@@ -57,6 +71,13 @@ export default function Signin() {
 
           <Form.Text>
             New to Netflix? <Form.Link to='/signup'>Sign Up</Form.Link>
+          </Form.Text>
+
+          <Form.Text>
+            Sign in as
+            <Form.Button type='submit' onClick={handleGuestLogin}>
+              test user
+            </Form.Button>
           </Form.Text>
 
           <Form.TextSmall>
